@@ -1,0 +1,25 @@
+##Google Cloud Fundamentals: Getting Started with Cloud Marketplace
+
+##In this lab, you learn how to launch a solution using Cloud Marketplace
+
+Steps:
+
+1. On Google cloud console, navigate to the marketplace, in the serach bar: input LAMP certified by Bitnami
+
+2. Launch the LAMP stack
+
+3. # ssh into LAMP stack
+	gcloud compute ssh bitnami
+	
+	#change the current work directory
+		cd /opt/bitnami
+
+4. To copy the phpinfo.php script from the installation directory to a publicly accessible location under the web server document root, execute the following command:
+		sudo sh -c 'echo "<?php phpinfo(); ?>" > apache2/htdocs/phpinfo.php'
+
+5. Close the ssh command prompt window:
+		exit
+
+6. Open a brower tab and type the URL in the stack interface:
+		http://SITE_ADDRESS/phpinfo.php ##replace SITE_ADDRESS with the IP address
+	result: PHP configuration is displayed
